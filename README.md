@@ -486,7 +486,7 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 
 **Verify Setup:**
 1. Start a Codex session in your project directory
-2. Ask Codex: "What development workflow are you following for this project?"
+2. Ask Codex: For existing project - "Using AIDLC analyse the project?" or For new project "Using Aidlc what workflow do you see" .
 3. Codex should describe the AI-DLC three-phase workflow (Inception → Construction → Operations)
 
 > [!NOTE]
