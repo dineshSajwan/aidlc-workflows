@@ -492,8 +492,8 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 > [!NOTE]
 > The `AGENTS.md` file is designed to fit within Codex's instruction budget under default settings. If you add substantial project-specific content and Codex reports that the project documentation exceeds its instruction limit, you can increase the limit in your Codex configuration (for example, by adjusting `project_doc_max_bytes` in your `config.toml` file):
 > ```toml
->project_doc_max_bytes = 65536  # Example value; choose a limit appropriate for your project
->```
+> project_doc_max_bytes = 65536  # Example value; choose a limit appropriate for your project
+> ```
 
 **Directory Structure:**
 
