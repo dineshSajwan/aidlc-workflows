@@ -467,9 +467,9 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 3. Codex should describe the AI-DLC three-phase workflow (Inception → Construction → Operations)
 
 > [!NOTE]
-> The `AGENTS.md` file (~24 KB) fits comfortably within Codex's default 32 KiB instruction budget. If you add project-specific content to `AGENTS.md` that pushes the total over 32 KiB, increase the limit in `~/.codex/config.toml`:
+> The `AGENTS.md` file is designed to fit within Codex's instruction budget under default settings. If you add substantial project-specific content and Codex reports that the project documentation exceeds its instruction limit, you can increase the limit in your Codex configuration (for example, by adjusting `project_doc_max_bytes` in your `config.toml` file):
 ```toml
-project_doc_max_bytes = 65536
+project_doc_max_bytes = 65536  # Example value; choose a limit appropriate for your project
 ```
 
 **Directory Structure:**
