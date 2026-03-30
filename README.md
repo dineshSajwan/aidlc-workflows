@@ -38,6 +38,7 @@ AI-DLC is an intelligent software development workflow that adapts to your needs
   - [Cline](#cline)
   - [Claude Code](#claude-code)
   - [GitHub Copilot](#github-copilot)
+  - [OpenAI Codex](#openai-codex)
 
 ---
 
@@ -424,6 +425,57 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 <my-project>/
 ├── .github/
 │   └── copilot-instructions.md
+└── .aidlc-rule-details/
+    ├── common/
+    ├── inception/
+    ├── construction/
+    └── operations/
+```
+
+---
+
+### OpenAI Codex
+
+AI-DLC uses [Codex AGENTS.md](https://developers.openai.com/codex/guides/agents-md) to implement its intelligent workflow. Codex automatically discovers and loads `AGENTS.md` from your project root when you start a session.
+
+The commands below assume you extracted the zip to your `Downloads` folder. If you used a different location, replace `Downloads` with your actual folder path.
+
+**Unix/Linux/macOS:**
+```bash
+cp ~/Downloads/aidlc-rules/aws-aidlc-rules/core-workflow.md ./AGENTS.md
+mkdir -p .aidlc-rule-details
+cp -R ~/Downloads/aidlc-rules/aws-aidlc-rule-details/* .aidlc-rule-details/
+```
+
+**Windows PowerShell:**
+```powershell
+Copy-Item "$env:USERPROFILE\Downloads\aidlc-rules\aws-aidlc-rules\core-workflow.md" ".\AGENTS.md"
+New-Item -ItemType Directory -Force -Path ".aidlc-rule-details"
+Copy-Item "$env:USERPROFILE\Downloads\aidlc-rules\aws-aidlc-rule-details\*" ".aidlc-rule-details\" -Recurse
+```
+
+**Windows CMD:**
+```cmd
+copy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rules\core-workflow.md" ".\AGENTS.md"
+mkdir .aidlc-rule-details
+xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-details\" /E /I
+```
+
+**Verify Setup:**
+1. Start a Codex session in your project directory
+2. Ask Codex: "What development workflow are you following for this project?"
+3. Codex should describe the AI-DLC three-phase workflow (Inception → Construction → Operations)
+
+> [!NOTE]
+> The `AGENTS.md` file (~24 KB) fits comfortably within Codex's default 32 KiB instruction budget. If you add project-specific content to `AGENTS.md` that pushes the total over 32 KiB, increase the limit in `~/.codex/config.toml`:
+> ```toml
+> project_doc_max_bytes = 65536
+> ```
+
+**Directory Structure:**
+```
+<my-project>/
+├── AGENTS.md
 └── .aidlc-rule-details/
     ├── common/
     ├── inception/

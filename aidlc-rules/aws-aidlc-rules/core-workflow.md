@@ -12,7 +12,7 @@ The AI model intelligently assesses what stages are needed based on:
 
 ## MANDATORY: Rule Details Loading
 **CRITICAL**: When performing any phase, you MUST read and use relevant content from rule detail files. Check these paths in order and use the first one that exists:
-- `.aidlc-rule-details/` (Cursor, Cline, Claude Code, GitHub Copilot)
+- `.aidlc-rule-details/` (Cursor, Cline, Claude Code, GitHub Copilot, OpenAI Codex)
 - `.kiro/aws-aidlc-rule-details/` (Kiro IDE and CLI)
 - `.amazonq/aws-aidlc-rule-details/` (Amazon Q Developer)
 
