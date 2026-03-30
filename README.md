@@ -505,7 +505,6 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
     ├── inception/
     ├── construction/
     ├── extensions/
-    ├── extensions/
     └── operations/
 ```
 
