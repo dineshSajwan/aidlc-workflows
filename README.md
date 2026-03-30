@@ -473,6 +473,7 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 > ```
 
 **Directory Structure:**
+
 ```
 <my-project>/
 ├── AGENTS.md
