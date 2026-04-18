@@ -90,14 +90,14 @@ The agent will download the latest release, create the correct config file for y
 
 ## Platform-Specific Setup
 
-  - [Kiro](#kiro)
-  - [Amazon Q Developer IDE Plugin](#amazon-q-developer-ide-pluginextension)
-  - [Cursor IDE](#cursor-ide)
-  - [Cline](#cline)
-  - [Claude Code](#claude-code)
-  - [GitHub Copilot](#github-copilot)
-  - [OpenAI Codex](#openai-codex)
-  - [Other Agents](#other-agents)
+- [Kiro](#kiro)
+- [Amazon Q Developer IDE Plugin](#amazon-q-developer-ide-pluginextension)
+- [Cursor IDE](#cursor-ide)
+- [Cline](#cline)
+- [Claude Code](#claude-code)
+- [GitHub Copilot](#github-copilot)
+- [OpenAI Codex](#openai-codex)
+- [Other Agents](#other-agents)
 
 ---
 
@@ -556,6 +556,7 @@ AI-DLC supports OpenAI Codex as one of its compatible IDEs, using the [Codex AGE
 The commands below assume you extracted the zip to your `Downloads` folder. If you used a different location, replace `Downloads` with your actual folder path.
 
 **Unix/Linux/macOS:**
+
 ```bash
 cp ~/Downloads/aidlc-rules/aws-aidlc-rules/core-workflow.md ./AGENTS.md
 mkdir -p .aidlc-rule-details
@@ -563,6 +564,7 @@ cp -R ~/Downloads/aidlc-rules/aws-aidlc-rule-details/* .aidlc-rule-details/
 ```
 
 **Windows PowerShell:**
+
 ```powershell
 Copy-Item "$env:USERPROFILE\Downloads\aidlc-rules\aws-aidlc-rules\core-workflow.md" ".\AGENTS.md"
 New-Item -ItemType Directory -Force -Path ".aidlc-rule-details"
@@ -570,6 +572,7 @@ Copy-Item "$env:USERPROFILE\Downloads\aidlc-rules\aws-aidlc-rule-details\*" ".ai
 ```
 
 **Windows CMD:**
+
 ```cmd
 copy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rules\core-workflow.md" ".\AGENTS.md"
 mkdir .aidlc-rule-details
@@ -577,19 +580,21 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 ```
 
 **Verify Setup:**
+
 1. Start a Codex session in your project directory
 2. Ask Codex: For existing project - "Using AIDLC analyse the project?" or For new project "Using Aidlc what workflow do you see" .
 3. Codex should describe the AI-DLC three-phase workflow (Inception → Construction → Operations)
 
 > [!NOTE]
 > The `AGENTS.md` file is designed to fit within Codex's instruction budget under default settings. If you add substantial project-specific content and Codex reports that the project documentation exceeds its instruction limit, you can increase the limit in your Codex configuration (for example, by adjusting `project_doc_max_bytes` in your `config.toml` file):
+>
 > ```toml
 > project_doc_max_bytes = 65536  # Example value; choose a limit appropriate for your project
 > ```
 
 **Directory Structure:**
 
-```
+```text
 <my-project>/
 ├── AGENTS.md
 └── .aidlc-rule-details/
