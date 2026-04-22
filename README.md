@@ -499,7 +499,7 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 
 ### OpenAI Codex
 
-AI-DLC supports OpenAI Codex as one of its compatible IDEs, using the [Codex AGENTS.md](https://developers.openai.com/codex/guides/agents-md) convention to deliver its intelligent workflow. Codex automatically discovers and loads `AGENTS.md` from your project root when you start a session.
+AI-DLC supports OpenAI Codex as a supported coding agent, using the [Codex AGENTS.md](https://developers.openai.com/codex/guides/agents-md) convention to deliver its intelligent workflow. Codex automatically discovers and loads `AGENTS.md` from your project root when you start a session.
 
 The commands below assume you extracted the zip to your `Downloads` folder. If you used a different location, replace `Downloads` with your actual folder path.
 
